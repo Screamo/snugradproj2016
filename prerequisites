@@ -1,0 +1,16 @@
+<Prerequisites>
+1. Nehalem 이후 아키텍처 CPU (check)
+2. Ubuntu 14.04
+	CPU의 특정 레지스터를 다룰 것이므로 가상머신보다는 Windows와 dual boot으로 설치하는 것이 바람직
+	Bootable USB drive 만들어 부팅한 후 기존 Windows 파티션을 축소하고 남는 공간에 설치하는 등 방법 이용
+3. GitHub 가입 및 사용법 익히기
+	우리 github repo : git@github.com:Screamo/snugradproj2016.git
+	Git을 통해 상대방의 최근 commit이 잘 로컬에 반영되는지 확인하기
+4. Linux의 system call 에 대해 공부하기
+	인터넷 검색이나 Linux kernel development 등 서적을 통해 기초적인 내용은 숙지 가능
+	Syscall 추가를 위해 Source tree의 어떤 파일에 어떤 내용이 추가되어야 할 것인지 파악하기
+5. Intel x86-64 아키텍쳐 매뉴얼에서 LBR(last branch record) 관련 부분 숙지
+	첨부파일 참조
+	특히 어떤 MSR(model-specific register)를 다루게 될지 위주로 볼 것
+	Inline assembly를 이용해서 rdmsr/wrmsr 명령어 활용하여 LBR 관리 및 활용
+	(상황을 고려하여 Chap.36 Processor Trace까지 진행할 수 있음)	
