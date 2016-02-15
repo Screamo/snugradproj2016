@@ -1,0 +1,36 @@
+<ubuntu multiboot으로 설치하기>
+  1. ubuntu 14.04. 다운로드
+  2. bootable USB drive에 압축해제
+  3. 하드디스크의 기존 Windows가 차지하는 용량 즁 약 120Gbyte 볼륨을 떼어 새로운 주파티션을 생성한다. (파일시스템: NTFS) 
+  4. 생성된 파티션에 ubuntu를 설치. 
+    총 120Gbyte의 볼륨을 50Gbyte(Ubuntu), 60Gbyte(/home), 10Gbyte(swap)로 파티션을 나누어 설치하였다.
+    
+<ubuntu kernel을 compile 해보기>
+  1. kernel.org(The Linux Kernel Archives)에서 Linux-4.4.1.tar.xz (Latest Stable Kernel)을 다운로드한다.
+  2. Terminal에서 명령어를 이용하여 압축해제한다.
+    - ncurses가 없어서 에러가 나는 경우
+      아래 명령어를 입력한다.
+      sudo apt-get install build-essential
+      sudo apt-get install libncurses5-dev
+      sudo apt-get install libncursesw5-dev #한글 출력을 위한 라이브러리
+  3. (configuration) make menuconfig 명령어를 입력하고, ncurses를 이용하여 .config파일을 save한다.
+  4. (permission access) sudo su 명령어를 입력하여 root 권한으로 접근한다.
+  5. (compile) 다음 명령어를 이용한다.
+    make
+    make modules
+    make modules_install
+    make install
+    reboot
+    - openssl이 없어서 에러가 나는 경우
+      아래 명령어를 입력한다.
+      sudo atp-get install libssl-dev
+  6. uname -r 명령어를 이용해 커널이 잘 설치되었는지 확인한다.
+  (참고사이트 : http://www.thegeekstuff.com/2013/06/compile-linux-kernel/)
+  
+  <kernel에 system call 추가하기 연습 : Helloworld>
+  (참고사이트 : http://harryp.tistory.com/69)
+  
+
+  
+      
+  
