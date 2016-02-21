@@ -334,5 +334,4 @@ sys_call_table:
 	.long	sys_memfd_create
 	.long	sys_bpf
 	.long	sys_execveat		/* 320 */
-	.long	sys_helloworld
 	.long	sys_ni_syscall		/* r8 is saturated at nr_syscalls */
